@@ -1,16 +1,18 @@
 import React from 'react';
-import { Box, Grid, GridItem } from '@chakra-ui/react';
+import { Box, Button, Grid, GridItem, useColorMode } from '@chakra-ui/react';
 import Image from 'next/image';
 import Searchbar from './Searchbar';
 import { GlobeAltIcon, MenuIcon, UserCircleIcon } from '@heroicons/react/solid';
+import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 
 export function Header() {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <Grid
       gridTemplateColumns={'repeat(3, 1fr)'}
       h="80px"
       w="100%"
-      bg="white"
       alignItems="center"
       position="sticky"
       top={0}
@@ -39,6 +41,9 @@ export function Header() {
         position="relative"
         height="100%"
       >
+        <Button onClick={toggleColorMode} w="20px" mr={2}>
+          {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+        </Button>
         <Box>Become a Host</Box>
         <Box cursor="pointer" aria-label="ok" height="80%" display="flex" alignItems="center" ml={3} mr={3}>
           <GlobeAltIcon height="50%" />
