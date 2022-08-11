@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Searchbar from './Searchbar';
 import { GlobeAltIcon, MenuIcon, UserCircleIcon } from '@heroicons/react/solid';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { BASE_PAPA_URL } from '../../fetching/fetch';
 
 export function Header() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -21,13 +22,7 @@ export function Header() {
       px={8}
     >
       <GridItem height="50%" position="relative">
-        <Image
-          alt="airbnb Logo"
-          src="https://links.papareact.com/qd3"
-          layout="fill"
-          objectFit="contain"
-          objectPosition="left"
-        />
+        <Image alt="airbnb Logo" src={`${BASE_PAPA_URL}/qd3`} layout="fill" objectFit="contain" objectPosition="left" />
       </GridItem>
       <GridItem width="80%">
         <Searchbar />
