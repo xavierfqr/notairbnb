@@ -1,4 +1,4 @@
-import { Flex, Heading, HStack, Stack } from '@chakra-ui/react';
+import { Flex, Heading, HStack } from '@chakra-ui/react';
 import React from 'react';
 import { LiveAnywhereData } from '../../../fetching/fetch';
 import { MiddleCard } from '../MiddleCard';
